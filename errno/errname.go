@@ -569,7 +569,7 @@ var MySQLErrName = map[uint16]*mysql.ErrMessage{
 	ErrPartitionFunctionIsNotAllowed:            mysql.Message("This partition function is not allowed", nil),
 	ErrDdlLog:                                   mysql.Message("Error in DDL log", nil),
 	ErrNullInValuesLessThan:                     mysql.Message("Not allowed to use NULL value in VALUES LESS THAN", nil),
-	ErrWrongPartitionName:                       mysql.Message("Incorrect partition name", nil),
+	ErrWrongPartitionName:                       mysql.Message("Incorrect partition name tuziemon", nil),
 	ErrCantChangeTxCharacteristics:              mysql.Message("Transaction characteristics can't be changed while a transaction is in progress", nil),
 	ErrDupEntryAutoincrementCase:                mysql.Message("ALTER TABLE causes autoIncrement resequencing, resulting in duplicate entry '%-.192s' for key '%-.192s'", nil),
 	ErrEventModifyQueue:                         mysql.Message("Internal scheduler error %d", nil),

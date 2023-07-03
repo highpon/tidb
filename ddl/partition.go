@@ -860,6 +860,7 @@ func generatePartitionDefinitionsFromInterval(ctx sessionctx.Context, partOption
 	if len(tbInfo.Partition.Columns) > 0 {
 		colTypes := collectColumnsType(tbInfo)
 		if len(colTypes) != len(tbInfo.Partition.Columns) {
+			fmt.Println("--------------------------------------- 1")
 			return dbterror.ErrWrongPartitionName.GenWithStack("partition column name cannot be found")
 		}
 		if _, err := checkAndGetColumnsTypeAndValuesMatch(ctx, colTypes, first.Exprs); err != nil {
@@ -1186,6 +1187,7 @@ func buildListPartitionDefinitions(ctx sessionctx.Context, defs []*ast.Partition
 	exprChecker := newPartitionExprChecker(ctx, nil, checkPartitionExprAllowed)
 	colTypes := collectColumnsType(tbInfo)
 	if len(colTypes) != len(tbInfo.Partition.Columns) {
+		fmt.Println("--------------------------------------- 2")
 		return nil, dbterror.ErrWrongPartitionName.GenWithStack("partition column name cannot be found")
 	}
 	for _, def := range defs {
@@ -1264,6 +1266,7 @@ func buildRangePartitionDefinitions(ctx sessionctx.Context, defs []*ast.Partitio
 	exprChecker := newPartitionExprChecker(ctx, nil, checkPartitionExprAllowed)
 	colTypes := collectColumnsType(tbInfo)
 	if len(colTypes) != len(tbInfo.Partition.Columns) {
+		fmt.Println("--------------------------------------- 3")
 		return nil, dbterror.ErrWrongPartitionName.GenWithStack("partition column name cannot be found")
 	}
 	for _, def := range defs {

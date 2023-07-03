@@ -4153,6 +4153,7 @@ func getReplacedPartitionIDs(names []model.CIStr, pi *model.PartitionInfo) (firs
 	for _, name := range names {
 		partIdx := pi.FindPartitionDefinitionByName(name.L)
 		if partIdx == -1 {
+			fmt.Println("--------------------------------------- 4")
 			return 0, 0, nil, errors.Trace(dbterror.ErrWrongPartitionName)
 		}
 		if _, ok := idMap[partIdx]; ok {
